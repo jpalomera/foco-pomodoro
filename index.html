@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f3efe6" />
+  <title>Foco â€” Tu ritmo, una tarea a la vez</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header>
+    <a class="brand" href="#" aria-label="Foco, inicio"><span>â—</span> foco</a>
+    <nav aria-label="Acciones principales">
+      <button class="icon-button" id="soundButton" aria-label="Activar sonido" title="Sonido">â—–))</button>
+      <button class="icon-button" id="settingsButton" aria-label="Abrir ajustes" title="Ajustes">âŒ</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="modeLabel">
+      <div class="eyebrow"><span class="pulse"></span><span id="modeLabel">momento de enfocarse</span></div>
+      <div class="timer-wrap">
+        <svg class="progress" viewBox="0 0 300 300" aria-hidden="true">
+          <circle class="track" cx="150" cy="150" r="137"></circle>
+          <circle class="ring" cx="150" cy="150" r="137"></circle>
+        </svg>
+        <div class="timer-content">
+          <div id="time" class="time" role="timer" aria-live="polite">25:00</div>
+          <div id="sessionCount" class="session-count">sesiÃ³n 1 de 4</div>
+        </div>
+      </div>
+      <div class="controls">
+        <button id="resetButton" class="secondary round" aria-label="Reiniciar temporizador">â†º</button>
+        <button id="playButton" class="primary"><span id="playIcon">â–¶</span><span id="playText">empezar</span></button>
+        <button id="skipButton" class="secondary round" aria-label="Saltar sesiÃ³n">â†’</button>
+      </div>
+      <p id="adaptiveNote" class="adaptive-note">Tu ritmo recomendado: <strong>25 min</strong></p>
+    </section>
+
+    <section class="workspace">
+      <div class="tasks-card card">
+        <div class="section-heading">
+          <div><span class="kicker">AHORA</span><h1>Â¿En quÃ© vas a avanzar?</h1></div>
+          <span id="taskProgress" class="task-progress">0 / 0</span>
+        </div>
+        <form id="taskForm" class="task-form">
+          <input id="taskInput" maxlength="90" autocomplete="off" placeholder="Escribe una tarea y presiona Enter" aria-label="Nueva tarea" required />
+          <button type="submit" aria-label="Agregar tarea">+</button>
+        </form>
+        <ul id="taskList" class="task-list"></ul>
+        <div id="emptyState" class="empty-state">
+          <span>âœ“</span><p>Tu lista estÃ¡ despejada.<br>Agrega una pequeÃ±a victoria.</p>
+        </div>
+      </div>
+
+      <aside class="stats-card card" aria-labelledby="statsTitle">
+        <span class="kicker">HOY</span><h2 id="statsTitle">Tu progreso</h2>
+        <div class="big-stat"><strong id="focusMinutes">0</strong><span>minutos<br>de enfoque</span></div>
+        <div class="mini-stats">
+          <div><strong id="completedSessions">0</strong><span>sesiones</span></div>
+          <div><strong id="completedTasks">0</strong><span>tareas</span></div>
+        </div>
+        <div class="week" id="weekChart" aria-label="Actividad de los Ãºltimos 7 dÃ­as"></div>
+      </aside>
+    </section>
+  </main>
+
+  <footer><span>Todo queda guardado en tu dispositivo.</span><span>Sin cuenta Â· Sin distracciones</span></footer>
+
+  <dialog id="settingsDialog">
+    <form method="dialog" class="settings-panel">
+      <div class="dialog-heading"><div><span class="kicker">PERSONALIZA</span><h2>Tu ritmo</h2></div><button value="cancel" class="close" aria-label="Cerrar">Ã—</button></div>
+      <label>Enfoque <span><input id="focusSetting" type="number" min="1" max="90" value="25"> min</span></label>
+      <label>Descanso corto <span><input id="shortSetting" type="number" min="1" max="30" value="5"> min</span></label>
+      <label>Descanso largo <span><input id="longSetting" type="number" min="1" max="60" value="15"> min</span></label>
+      <label class="toggle-label">Ritmo adaptable <input id="adaptiveSetting" type="checkbox" checked></label>
+      <p class="hint">Ajusta suavemente el tiempo recomendado segÃºn tus sesiones completadas y saltadas.</p>
+      <button id="saveSettings" value="default" class="primary save">guardar cambios</button>
+    </form>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+  <script src="demo.js"></script>
+</body>
+</html>
+
