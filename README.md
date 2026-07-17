@@ -6,13 +6,13 @@ Clon funcional de un temporizador Pomodoro, construido con Codex para el Proyect
 
 - Temporizador de enfoque, descanso corto y descanso largo.
 - Lista de tareas guardada localmente.
-- EstadÃ­sticas diarias y actividad de los Ãºltimos siete dÃ­as.
+- Estadísticas diarias y actividad de los últimos siete días.
 - Duraciones personalizables, sonido y notificaciones.
-- **Mejora propia:** ritmo adaptable, que recomienda sesiones mÃ¡s cortas o largas segÃºn cuÃ¡ntas completas o saltas.
+- **Mejora propia:** ritmo adaptable, que recomienda sesiones más cortas o largas según cuántas completas o saltas.
 
 ## Ejecutar
 
-Abre `index.html` directamente en un navegador. Para notificaciones completas, sÃ­rvelo en local:
+Abre `index.html` directamente en un navegador. Para notificaciones completas, sírvelo en local:
 
 ```bash
 npx serve .
@@ -20,5 +20,5 @@ npx serve .
 
 ## Texto para compartir
 
-> ClonÃ© un temporizador Pomodoro y lo llamÃ© **Foco**. Lo construÃ­ dirigiendo a **Codex**. AdemÃ¡s del temporizador, agreguÃ© tareas, estadÃ­sticas locales y un â€œritmo adaptableâ€ que recomienda la duraciÃ³n de las sesiones segÃºn cÃ³mo vas avanzando. Todo funciona sin cuenta y los datos quedan en tu dispositivo.
+> Cloné un temporizador Pomodoro y lo llamé **Foco**. Lo construí dirigiendo a **Codex**. Además del temporizador, agregué tareas, estadísticas locales y un “ritmo adaptable” que recomienda la duración de las sesiones según cómo vas avanzando. Todo funciona sin cuenta y los datos quedan en tu dispositivo.
 
